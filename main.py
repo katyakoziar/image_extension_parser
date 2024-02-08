@@ -8,8 +8,8 @@ sheet_id = '1TdRPOjLB0s5GZh_KIlwNe-ZhJMBvgV0i26KdsTVRBEs'
 
 async def main():
     image_urls = await get_image_urls()
-    image_sizes = await fetch_all_images(image_urls)
-    await update_image_sizes(sheet_id, image_sizes)
+    url_to_size_map = await fetch_all_images(image_urls)
+    await update_image_sizes(sheet_id, url_to_size_map)
 
 if __name__ == '__main__':
     asyncio.run(main())
